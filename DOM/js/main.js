@@ -34,3 +34,13 @@ imagen2.src = b.images[0]
 titulo2.innerHTML = b.name
 clan2.innerHTML = (`Clan: ${b.personal.clan} Aldea: ${b.personal.affiliation[0]}`)
 habilidad2.innerHTML = (`Habilidad: ${b.jutsu[1]}`)
+
+let titulo3 = document.getElementById("cardtitle3")
+let imagen3 = document.getElementById("cardimage3")
+let clan3 = document.getElementById("cardhead3")
+let habilidad3 = document.getElementById("carddescription3")
+
+imagen3.src = c.images[0]
+titulo3.innerHTML = c.name
+clan3.innerHTML = (`Clan: ${c.personal.clan} Aldea: ${c.personal.affiliation[0]}`)
+habilidad3.innerHTML = (`Habilidad: ${c.jutsu[1]}`)
