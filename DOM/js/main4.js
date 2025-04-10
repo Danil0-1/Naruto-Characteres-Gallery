@@ -1,57 +1,36 @@
-const direccionPersonajes = new URL('https://dattebayo-api.onrender.com/characters')
-
+const direccionPersonajes = new URL('https://dattebayo-api.onrender.com/characters');
 export default direccionPersonajes;
 
 let obtenerTodos = async () => {
-    const ruta = 'https://dattebayo-api.onrender.com/characters'
-    const opciones = {
-        method: "GET",
-    }
-    const respuesta = await fetch(ruta, opciones)
-    return respuesta.json()
+    const ruta = direccionPersonajes.href;
+    const opciones = { method: "GET" };
+    const respuesta = await fetch(ruta, opciones);
+    return respuesta.json();
+};
+
+let resultado = await fetch(direccionPersonajes);
+let datosApi = await resultado.json();
+let personajes = datosApi.characters;
+
+const tarjetas = [
+    { id: 1, index: 12, jutsu: 5, clan: "No clan" },
+    { id: 2, index: 13, jutsu: 1, clan: "No clan" },
+    { id: 3, index: 14, jutsu: 1 },
+    { id: 4, index: 15, jutsu: 1 }
+];
+
+function mostrarTarjeta({ id, index, jutsu, clan }) {
+    const personaje = personajes[index];
+
+    const titulo = document.getElementById(`cardtitle${id}`);
+    const imagen = document.getElementById(`cardimage${id}`);
+    const cabecera = document.getElementById(`cardhead${id}`);
+    const descripcion = document.getElementById(`carddescription${id}`);
+
+    titulo.innerHTML = personaje.name;
+    imagen.src = personaje.images[0];
+    cabecera.innerHTML = `Clan: ${clan || personaje.personal.clan } Aldea: ${personaje.personal.affiliation[0] }`;
+    descripcion.innerHTML = `Habilidad: ${personaje.jutsu[jutsu] }`;
 }
 
-let resultado = await fetch("https://dattebayo-api.onrender.com/characters")
-let datosApi = await resultado.json()
-
-const [pers1, pers2, pers3, pers4, pers5, pers6, pers7, pers8, pers9, pers10, pers11, pers12, pers13, pers14, pers15, pers16, pers17, pers18, pers19, pers20] = datosApi.characters
-
-let tituloM = document.getElementById("cardtitle1")
-let imagenM = document.getElementById("cardimage1")
-let clanM = document.getElementById("cardhead1")
-let habilidadM = document.getElementById("carddescription1")
-
-imagenM.src = pers13.images[0]
-tituloM.innerHTML = pers13.name
-clanM.innerHTML = `Clan: No clan Aldea: ${pers13.personal.affiliation[0]}`
-habilidadM.innerHTML = `Habilidad: ${pers13.jutsu[5]}`
-
-let tituloN = document.getElementById("cardtitle2")
-let imagenN = document.getElementById("cardimage2")
-let clanN = document.getElementById("cardhead2")
-let habilidadN = document.getElementById("carddescription2")
-
-imagenN.src = pers14.images[0]
-tituloN.innerHTML = pers14.name
-clanN.innerHTML = `Clan: No clan Aldea: ${pers14.personal.affiliation[0]}`
-habilidadN.innerHTML = `Habilidad: ${pers14.jutsu[1]}`
-
-let tituloO = document.getElementById("cardtitle3")
-let imagenO = document.getElementById("cardimage3")
-let clanO = document.getElementById("cardhead3")
-let habilidadO = document.getElementById("carddescription3")
-
-imagenO.src = pers15.images[0]
-tituloO.innerHTML = pers15.name
-clanO.innerHTML = `Clan: ${pers15.personal.clan} Aldea: ${pers15.personal.affiliation[0]}`
-habilidadO.innerHTML = `Habilidad: ${pers15.jutsu[1]}`
-
-let tituloP = document.getElementById("cardtitle4")
-let imagenP = document.getElementById("cardimage4")
-let clanP = document.getElementById("cardhead4")
-let habilidadP = document.getElementById("carddescription4")
-
-imagenP.src = pers16.images[0]
-tituloP.innerHTML = pers16.name
-clanP.innerHTML = `Clan: ${pers16.personal.clan} Aldea: ${pers16.personal.affiliation[0]}`
-habilidadP.innerHTML = `Habilidad: ${pers16.jutsu[1]}`
+tarjetas.forEach(mostrarTarjeta)
