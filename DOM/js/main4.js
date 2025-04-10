@@ -14,7 +14,6 @@ let obtenerTodos = async () => {
 let resultado = await fetch("https://dattebayo-api.onrender.com/characters")
 let datosApi = await resultado.json()
 
-// Asignación de personajes
 const [pers1, pers2, pers3, pers4, pers5, pers6, pers7, pers8, pers9, pers10, pers11, pers12, pers13, pers14, pers15, pers16, pers17, pers18, pers19, pers20] = datosApi.characters
 
 let tituloM = document.getElementById("cardtitle1")
