@@ -24,7 +24,7 @@ let jutsuUno = document.getElementById("carddescription1")
 imagenUno.src = pers5.images[0]
 tituloUno.innerHTML = pers5.name
 datosUno.innerHTML = `Clan: No clan Aldea: ${pers5.personal.affiliation[0]}`
-jutsuUno.innerHTML = `Habilidad: ${pers5.jutsu[5]}`
+jutsuUno.innerHTML = `Habilidad: ${pers5.jutsu[3]}`
 
 let tituloDos = document.getElementById("cardtitle2")
 let imagenDos = document.getElementById("cardimage2")
@@ -34,7 +34,7 @@ let jutsuDos = document.getElementById("carddescription2")
 imagenDos.src = pers6.images[0]
 tituloDos.innerHTML = pers6.name
 datosDos.innerHTML = `Clan: ${pers6.personal.clan} Aldea: ${pers6.personal.affiliation[0]}`
-jutsuDos.innerHTML = `Habilidad: ${pers6.jutsu[1]}`
+jutsuDos.innerHTML = `Habilidad: ${pers6.jutsu[2]}`
 
 let tituloTres = document.getElementById("cardtitle3")
 let imagenTres = document.getElementById("cardimage3")
@@ -54,4 +54,4 @@ let jutsuCuatro = document.getElementById("carddescription4")
 imagenCuatro.src = pers8.images[0]
 tituloCuatro.innerHTML = pers8.name
 datosCuatro.innerHTML = `Clan: ${pers8.personal.clan} Aldea: ${pers8.personal.affiliation[0]}`
-jutsuCuatro.innerHTML = `Habilidad: ${pers8.jutsu[1]}`
+jutsuCuatro.innerHTML = `Habilidad: ${pers8.jutsu[10]}`

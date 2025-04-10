@@ -23,7 +23,7 @@ let tecnicaDestacada = document.getElementById("carddescription1")
 imagenDestacada.src = naruto.images[0]
 tituloDestacado.innerHTML = naruto.name
 detallesDestacados.innerHTML = `Clan: ${naruto.personal.clan} Aldea: ${naruto.personal.affiliation[0]}`
-tecnicaDestacada.innerHTML = `Habilidad: ${naruto.jutsu[52]}`
+tecnicaDestacada.innerHTML = `Habilidad: ${naruto.jutsu[50]}`
 
 // SEGUNDA CARD
 let tituloSegundo = document.getElementById("cardtitle2")
@@ -34,7 +34,7 @@ let tecnicaSegundo = document.getElementById("carddescription2")
 imagenSegundo.src = sasuke.images[0]
 tituloSegundo.innerHTML = sasuke.name
 detallesSegundo.innerHTML = `Clan: ${sasuke.personal.clan} Aldea: ${sasuke.personal.affiliation[0]}`
-tecnicaSegundo.innerHTML = `Habilidad: ${sasuke.jutsu[1]}`
+tecnicaSegundo.innerHTML = `Habilidad: ${sasuke.jutsu[2]}`
 
 // TERCERA CARD
 let tituloTercero = document.getElementById("cardtitle3")
@@ -45,7 +45,7 @@ let tecnicaTercero = document.getElementById("carddescription3")
 imagenTercero.src = sakura.images[0]
 tituloTercero.innerHTML = sakura.name
 detallesTercero.innerHTML = `Clan: ${sakura.personal.clan} Aldea: ${sakura.personal.affiliation[0]}`
-tecnicaTercero.innerHTML = `Habilidad: ${sakura.jutsu[1]}`
+tecnicaTercero.innerHTML = `Habilidad: ${sakura.jutsu[6]}`
 
 // CUARTA CARD
 let tituloCuarto = document.getElementById("cardtitle4")
