@@ -1,62 +1,57 @@
-const apiURL = new URL('https://dattebayo-api.onrender.com/characters')
+const endpointApi = new URL('https://dattebayo-api.onrender.com/characters')
 
-export default apiURL;
+export default endpointApi;
 
-let traerTodo = async () => {
-    const endpoint = 'https://dattebayo-api.onrender.com/characters'
-    const opcionesFetch = {
+let obtenerPersonajes = async () => {
+    const direccion = 'https://dattebayo-api.onrender.com/characters'
+    const opciones = {
         method: "GET",
     }
-    const respuesta = await fetch(endpoint, opcionesFetch)
+    const respuesta = await fetch(direccion, opciones)
     return respuesta.json()
 }
 
-let peticion = await fetch("https://dattebayo-api.onrender.com/characters")
-let respuestaJson = await peticion.json()
+let resultado = await fetch("https://dattebayo-api.onrender.com/characters")
+let personajesData = await resultado.json()
 
-// Renombrar personajes
-const [shikamaru, hinata, kiba, neji, ...otrosPersonajes] = respuestaJson.characters
+const [pers1, pers2, pers3, pers4, pers5, pers6, pers7, pers8, pers9, pers10, pers11, pers12, pers13, pers14, pers15, pers16, pers17, pers18, pers19, pers20] = personajesData.characters
 
-// CARD 1
-let tituloPrincipal = document.getElementById("cardtitle1")
-let imagenPrincipal = document.getElementById("cardimage1")
-let detallesPrincipales = document.getElementById("cardhead1")
-let jutsuPrincipal = document.getElementById("carddescription1")
+let tituloUno = document.getElementById("cardtitle1")
+let imagenUno = document.getElementById("cardimage1")
+let datosUno = document.getElementById("cardhead1")
+let jutsuUno = document.getElementById("carddescription1")
 
-imagenPrincipal.src = shikamaru.images[0]
-tituloPrincipal.innerHTML = shikamaru.name
-detallesPrincipales.innerHTML = `Clan: No clan Aldea: ${shikamaru.personal.affiliation[0]}`
-jutsuPrincipal.innerHTML = `Habilidad: ${shikamaru.jutsu[5]}`
+imagenUno.src = pers5.images[0]
+tituloUno.innerHTML = pers5.name
+datosUno.innerHTML = `Clan: No clan Aldea: ${pers5.personal.affiliation[0]}`
+jutsuUno.innerHTML = `Habilidad: ${pers5.jutsu[5]}`
 
-// CARD 2
-let tituloSecundario = document.getElementById("cardtitle2")
-let imagenSecundaria = document.getElementById("cardimage2")
-let detallesSecundarios = document.getElementById("cardhead2")
-let jutsuSecundario = document.getElementById("carddescription2")
+let tituloDos = document.getElementById("cardtitle2")
+let imagenDos = document.getElementById("cardimage2")
+let datosDos = document.getElementById("cardhead2")
+let jutsuDos = document.getElementById("carddescription2")
 
-imagenSecundaria.src = hinata.images[0]
-tituloSecundario.innerHTML = hinata.name
-detallesSecundarios.innerHTML = `Clan: ${hinata.personal.clan} Aldea: ${hinata.personal.affiliation[0]}`
-jutsuSecundario.innerHTML = `Habilidad: ${hinata.jutsu[1]}`
+imagenDos.src = pers6.images[0]
+tituloDos.innerHTML = pers6.name
+datosDos.innerHTML = `Clan: ${pers6.personal.clan} Aldea: ${pers6.personal.affiliation[0]}`
+jutsuDos.innerHTML = `Habilidad: ${pers6.jutsu[1]}`
 
-// CARD 3
-let tituloTercero = document.getElementById("cardtitle3")
-let imagenTercera = document.getElementById("cardimage3")
-let detallesTerceros = document.getElementById("cardhead3")
-let jutsuTercero = document.getElementById("carddescription3")
+let tituloTres = document.getElementById("cardtitle3")
+let imagenTres = document.getElementById("cardimage3")
+let datosTres = document.getElementById("cardhead3")
+let jutsuTres = document.getElementById("carddescription3")
 
-imagenTercera.src = kiba.images[0]
-tituloTercero.innerHTML = kiba.name
-detallesTerceros.innerHTML = `Clan: ${kiba.personal.clan} Aldea: ${kiba.personal.affiliation[0]}`
-jutsuTercero.innerHTML = `Habilidad: ${kiba.jutsu[1]}`
+imagenTres.src = pers7.images[0]
+tituloTres.innerHTML = pers7.name
+datosTres.innerHTML = `Clan: ${pers7.personal.clan} Aldea: ${pers7.personal.affiliation[0]}`
+jutsuTres.innerHTML = `Habilidad: ${pers7.jutsu[1]}`
 
-// CARD 4
-let tituloCuarta = document.getElementById("cardtitle4")
-let imagenCuarta = document.getElementById("cardimage4")
-let detallesCuartos = document.getElementById("cardhead4")
-let jutsuCuarto = document.getElementById("carddescription4")
+let tituloCuatro = document.getElementById("cardtitle4")
+let imagenCuatro = document.getElementById("cardimage4")
+let datosCuatro = document.getElementById("cardhead4")
+let jutsuCuatro = document.getElementById("carddescription4")
 
-imagenCuarta.src = neji.images[0]
-tituloCuarta.innerHTML = neji.name
-detallesCuartos.innerHTML = `Clan: ${neji.personal.clan} Aldea: ${neji.personal.affiliation[0]}`
-jutsuCuarto.innerHTML = `Habilidad: ${neji.jutsu[1]}`
+imagenCuatro.src = pers8.images[0]
+tituloCuatro.innerHTML = pers8.name
+datosCuatro.innerHTML = `Clan: ${pers8.personal.clan} Aldea: ${pers8.personal.affiliation[0]}`
+jutsuCuatro.innerHTML = `Habilidad: ${pers8.jutsu[1]}`
